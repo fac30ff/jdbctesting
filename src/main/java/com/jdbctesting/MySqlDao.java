@@ -18,6 +18,18 @@ class MySqlDao {
     try {
       // This will load the MySQL driver, each DB has its own driver
       Class.forName("com.mysql.jdbc.Driver");
+
+      /**
+       * alternativ variant register driver
+       * try {
+       *    Driver myDriver = new com.mysql.jdbc.Driver();
+       *    DriverManager.registerDriver( myDriver );
+       * }
+       * catch(ClassNotFoundException ex) {
+       *    System.out.println("Error: unable to load driver class!");
+       *    System.exit(1);
+       * }
+       */
       // Setup the connection with the DB
       connect = DriverManager
               .getConnection("jdbc:mysql://localhost/feedback?"
